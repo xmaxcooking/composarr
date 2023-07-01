@@ -1,0 +1,15 @@
+services:
+  recyclarr:
+    image: recyclarr/recyclarr:latest
+    container_name: recyclarr
+    init: true 
+    volumes:
+      - .././recyclarr:/config
+    environment: 
+      - TZ=Europe/Berlin
+    networks:
+    - composarr
+
+networks:
+  composarr:
+    name: composarr

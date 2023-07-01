@@ -1,0 +1,17 @@
+services:
+  prowlarr:
+    image: linuxserver/prowlarr:latest
+    container_name: prowlarr  
+    environment:  
+      - TZ=Europe/Berlin
+    volumes:
+      - .././prowlarr:/config 
+    restart: unless-stopped
+    ports:
+      - 9696:9696
+    networks:
+      - composarr
+
+networks:
+  composarr:
+    name: composarr

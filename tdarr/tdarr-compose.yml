@@ -1,0 +1,35 @@
+services:
+  tdarr:
+    container_name: tdarr
+    image: ghcr.io/haveagitgat/tdarr:latest
+    restart: unless-stopped 
+    privileged: true
+    ports:
+      - 8265:8265 # webUI port
+      - 8266:8266 # server port
+      - 8267:8267 # Internal node port
+      - 8268:8268 # Example extra node port
+    environment:
+      - TZ=Europe/Berlin
+      - UMASK_SET=002
+      - serverIP=0.0.0.0
+      - serverPort=8266
+      - webUIPort=8265
+      - internalNode=true
+      - nodeID=MyInternalNode
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - .././tdarr/server:/app/server
+      - .././tdarr/configs:/app/configs
+      - .././tdarr/logs:/app/logs
+      - .././tdarr/cache:/temp
+      - .././data:/media
+    devices:
+      - /dev/dri:/dev/dri
+    networks:
+      - composarr
+
+networks:
+  composarr:
+    name: composarr

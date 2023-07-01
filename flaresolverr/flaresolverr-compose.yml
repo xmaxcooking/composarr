@@ -1,0 +1,19 @@
+services:
+  flaresolverr:
+    image: flaresolverr/flaresolverr:latest
+    container_name: flaresolverr  
+    environment:  
+      - TZ=Europe/Berlin
+      - CAPTCHA_SOLVER=hcaptcha-solver
+      - BROWSER_TIMEOUT=10000
+    volumes:
+      - .././flaresolverr:/config 
+    restart: unless-stopped
+    ports:
+      - 8191:8191
+    networks:
+      - composarr
+
+networks:
+  composarr:
+    name: composarr

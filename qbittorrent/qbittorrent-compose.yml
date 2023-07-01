@@ -1,0 +1,20 @@
+services:
+  qbittorrent:
+    image: linuxserver/qbittorrent
+    container_name: qbittorrent
+    environment: 
+      - TZ=Europe/Berlin
+      - WEBUI_PORT=8090
+    volumes:
+      - .././qbittorrent:/config
+      - .././data/torrents:/data/torrents
+    network_mode: service:gluetun # run on the vpn network
+    depends_on:
+      - gluetun
+    restart: unless-stopped
+    networks:
+      - composarr
+
+networks:
+  composarr:
+    name: composarr

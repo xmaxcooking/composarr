@@ -1,0 +1,17 @@
+services:
+  overseerr:
+    image: linuxserver/overseerr:latest
+    container_name: overseerr  
+    environment:  
+      - TZ=Europe/Berlin
+    volumes:
+      - .././overseerr:/config 
+    restart: unless-stopped
+    ports:
+      - 5055:5055
+    networks:
+      - composarr
+
+networks:
+  composarr:
+    name: composarr

@@ -1,0 +1,33 @@
+services:
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: watchtower
+    environment:
+      - TZ=Europe/Berlin
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_INCLUDE_STOPPED=true
+      - WATCHTOWER_REVIVE_STOPPED=false
+      - WATCHTOWER_SCHEDULE=0 0 2 * * *
+    command: # add or remove the below as required
+      - bazarr
+      - flaresolverr
+      - gluetun
+      - overseerr
+      - plex
+      - prowlarr
+      - qbittorrent
+      - radarr 
+      - recyclarr
+      - sonarr
+      - tautulli
+      - tdarr
+      - watchtower 
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    networks:
+      - composarr
+
+networks:
+  composarr:
+    name: composarr

@@ -1,0 +1,17 @@
+services:
+  tautulli:
+    image: linuxserver/tautulli:latest
+    container_name: tautulli
+    environment: 
+      - TZ=Europe/Berlin
+    volumes:
+      - .././tautulli:/config
+    ports:
+      - 8181:8181 
+    restart: unless-stopped
+    networks:
+    - composarr
+
+networks:
+  composarr:
+    name: composarr

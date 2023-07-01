@@ -1,0 +1,18 @@
+services:
+  linuxserver-radarr:
+    image: linuxserver/radarr:latest
+    container_name: radarr
+    environment: 
+      - TZ=Europe/Berlin
+    volumes:
+      - .././data:/data
+      - .././radarr:/config
+    ports:
+      - 7878:7878 
+    restart: unless-stopped
+    networks:
+      - composarr
+
+networks:
+  composarr:
+    name: composarr

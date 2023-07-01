@@ -1,0 +1,18 @@
+services:
+  Sonarr:
+    image: linuxserver/sonarr:latest
+    container_name: sonarr
+    environment: 
+      - TZ=Europe/Berlin
+    volumes:
+      - .././sonarr:/config
+      - .././data:/data
+    ports:
+      - 8989:8989 
+    restart: unless-stopped
+    networks:
+      - composarr
+
+networks:
+  composarr:
+    name: composarr
