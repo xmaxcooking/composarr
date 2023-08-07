@@ -180,12 +180,29 @@ Connect to Tdarr at `localhost:8265`
 
 > **Note**: The plugins' order and configurations are crucial for ensuring the best quality and compatibility. Adjust them as per your specific requirements.
 
+### 13. Recyclarr Setup
+
+- Open the recyclarr.yml file
+  - replace localhost with your IP.
+  - Add your radarr and sonarr API keys.
+- Restart the recyclarr container
+
 ---
 
 ### Wrapping Up
 
-With all these configurations, you've now set up a robust media stack and you can now add 
+With all these configurations, you've now set up a robust media stack and you can now add all your indexers to prowlarr and start selecting media on overseer.
+
+> **Note**: Use the flaresolverr tag if necessary
 
 Should you encounter any issues or need further guidance, please refer to the individual documentation of each service or raise an issue on our [GitHub repository](https://github.com/xmaxcooking/composarr/issues).
 
 Happy streaming! 🎬
+
+### Credits
+
+A special shoutout to [Dr Frankenstein](https://drfrankenstein.co.uk/) for his invaluable contribution and dedication to the Docker community. His in-depth tutorials on Synology Docker have paved the way for many enthusiasts and have been my guiding light for Composarr.
+
+### License
+
+Composarr is licensed under the MIT License. This means you can freely use, modify, distribute, and private use. We are not liable for any damages or warranties. For the full license details, you can [view the MIT License here](https://opensource.org/licenses/MIT).
