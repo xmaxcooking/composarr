@@ -51,8 +51,12 @@ Composarr is purely a tool for media organization and does not host or distribut
 ---
 
 ## Prerequisites
-1. Ensure Docker is installed on your system.
-2. Make sure the necessary ports are not being used by other applications.
+1. Clone the Repository: 
+```console
+git clone https://github.com/xmaxcooking/composarr.git
+```
+2. Ensure Docker is installed on your system.
+3. Make sure the necessary ports are not being used by other applications.
 
 ---
 
