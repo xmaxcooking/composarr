@@ -1,15 +1,23 @@
-# data
+# data media
 !data/.keep
-data/media/*
-!data/media/.keep
-data/raw/*
-!data/raw/.keep
+data/media/movies/*
+!data/media/movies/.keep
+data/media/series/*
+!data/media/series/.keep
+data/media/anime/* 
+!data/media/anime/.keep
+
+# data raw
+data/raw/movies/*
+!data/raw/movies/.keep
+data/raw/series/*
+!data/raw/series/.keep
+data/raw/anime/* 
+!data/raw/anime/.keep
+
+# data torrents
 data/torrents/*
 !data/torrents/.keep
-
-# bazarr
-bazarr/*
-!bazarr/.keep
 
 # flaresolverr
 flaresolverr/*
@@ -38,10 +46,6 @@ qbittorrent/*
 # radarr
 radarr/*
 !radarr/.keep
-
-# recyclarr
-recyclarr/*
-!recyclarr/.keep
 
 # sonarr
 sonarr/*

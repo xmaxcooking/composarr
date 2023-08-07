@@ -4,7 +4,7 @@
   "description": "arr stack bootstrap",
   "main": ".",
   "scripts": {
-    "start": "docker compose -p composarr -f .\\.docker\\bazarr-compose.yml -f .\\.docker\\flaresolverr-compose.yml -f .\\.docker\\gluetun-compose.yml -f .\\.docker\\overseerr-compose.yml -f .\\.docker\\plex-compose.yml -f .\\.docker\\prowlarr-compose.yml -f .\\.docker\\qbittorrent-compose.yml -f .\\.docker\\radarr-compose.yml -f .\\.docker\\recyclarr-compose.yml -f .\\.docker\\sonarr-compose.yml -f .\\.docker\\tautulli-compose.yml -f .\\.docker\\tdarr-compose.yml -f .\\.docker\\watchtower-compose.yml up -d"
+    "start": "docker compose -p composarr -f .\\.docker\\flaresolverr-compose.yml -f .\\.docker\\gluetun-compose.yml -f .\\.docker\\overseerr-compose.yml -f .\\.docker\\plex-compose.yml -f .\\.docker\\prowlarr-compose.yml -f .\\.docker\\qbittorrent-compose.yml -f .\\.docker\\radarr-compose.yml -f .\\.docker\\recyclarr-compose.yml -f .\\.docker\\sonarr-compose.yml -f .\\.docker\\tautulli-compose.yml -f .\\.docker\\tdarr-compose.yml -f .\\.docker\\watchtower-compose.yml up -d"
   },
   "repository": {
     "type": "git",
