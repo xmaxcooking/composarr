@@ -9,6 +9,10 @@ services:
       - TZ=Europe/Berlin
     networks:
     - composarr
+    restart: unless-stopped
+    depends_on:
+      - radarr
+      - sonarr
 
 networks:
   composarr:

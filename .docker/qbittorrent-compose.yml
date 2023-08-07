@@ -12,9 +12,3 @@ services:
     depends_on:
       - gluetun
     restart: unless-stopped
-    networks:
-      - composarr
-
-networks:
-  composarr:
-    name: composarr

@@ -1,0 +1,60 @@
+# data
+!data/.keep
+data/media/*
+!data/media/.keep
+data/raw/*
+!data/raw/.keep
+data/torrents/*
+!data/torrents/.keep
+
+# bazarr
+bazarr/*
+!bazarr/.keep
+
+# flaresolverr
+flaresolverr/*
+!flaresolverr/.keep
+
+# gluetun
+gluetun/*
+!gluetun/.keep
+
+# overseerr
+overseerr/*
+!overseerr/.keep
+
+# plex
+plex/*
+!plex/.keep
+
+# prowlarr
+prowlarr/*
+!prowlarr/.keep
+
+# qbittorrent
+qbittorrent/*
+!qbittorrent/.keep
+
+# radarr
+radarr/*
+!radarr/.keep
+
+# recyclarr
+recyclarr/*
+!recyclarr/.keep
+
+# sonarr
+sonarr/*
+!sonarr/.keep
+
+# tautulli
+tautulli/*
+!tautulli/.keep
+
+# tdarr
+tdarr/*
+!tdarr/.keep
+
+# watchtower
+watchtower/*
+!watchtower/.keep

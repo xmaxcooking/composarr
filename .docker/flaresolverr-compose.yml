@@ -9,6 +9,9 @@ services:
     volumes:
       - .././flaresolverr:/config 
     restart: unless-stopped
+    depends_on:
+      - radarr
+      - sonarr
     ports:
       - 8191:8191
     networks:

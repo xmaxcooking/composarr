@@ -1,0 +1,34 @@
+{
+  "name": "composarr",
+  "version": "0.1.0",
+  "description": "arr stack bootstrap",
+  "main": ".",
+  "scripts": {
+    "start": "docker compose -p composarr -f .\\.docker\\bazarr-compose.yml -f .\\.docker\\flaresolverr-compose.yml -f .\\.docker\\gluetun-compose.yml -f .\\.docker\\overseerr-compose.yml -f .\\.docker\\plex-compose.yml -f .\\.docker\\prowlarr-compose.yml -f .\\.docker\\qbittorrent-compose.yml -f .\\.docker\\radarr-compose.yml -f .\\.docker\\recyclarr-compose.yml -f .\\.docker\\sonarr-compose.yml -f .\\.docker\\tautulli-compose.yml -f .\\.docker\\tdarr-compose.yml -f .\\.docker\\watchtower-compose.yml up -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xmaxcooking/composarr.git"
+  },
+  "keywords": [
+    "bazarr",
+    "flaresolverr",
+    "gluetun",
+    "overseerr",
+    "plex",
+    "prowlarr",
+    "qbittorrent",
+    "radarr",
+    "recyclarr",
+    "sonarr",
+    "tautulli",
+    "tdarr",
+    "watchtower"
+  ],
+  "author": "xmaxcooking",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xmaxcooking/composarr/issues"
+  },
+  "homepage": "https://github.com/xmaxcooking/composarr#readme"
+}

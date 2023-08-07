@@ -1,5 +1,5 @@
 services:
-  linuxserver-bazarr:
+  bazarr:
     image: linuxserver/bazarr
     container_name: bazarr
     environment: 
@@ -10,6 +10,8 @@ services:
     ports:
       - 6767:6767
     restart: unless-stopped
+    depends_on:
+      - overseerr
     networks:
       - composarr
 

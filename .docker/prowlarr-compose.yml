@@ -7,6 +7,8 @@ services:
     volumes:
       - .././prowlarr:/config 
     restart: unless-stopped
+    depends_on:
+      - overseerr
     ports:
       - 9696:9696
     networks:

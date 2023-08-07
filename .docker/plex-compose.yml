@@ -12,6 +12,8 @@ services:
     devices:
       - /dev/dri:/dev/dri
     restart: unless-stopped
+    ports:
+      - 32400:32400
     networks:
       - composarr
 

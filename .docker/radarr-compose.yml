@@ -1,5 +1,5 @@
 services:
-  linuxserver-radarr:
+  radarr:
     image: linuxserver/radarr:latest
     container_name: radarr
     environment: 
@@ -10,6 +10,8 @@ services:
     ports:
       - 7878:7878 
     restart: unless-stopped
+    depends_on:
+      - overseerr
     networks:
       - composarr
 

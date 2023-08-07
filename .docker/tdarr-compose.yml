@@ -3,6 +3,10 @@ services:
     container_name: tdarr
     image: ghcr.io/haveagitgat/tdarr:latest
     restart: unless-stopped 
+    depends_on:
+      - qbittorrent
+      - radarr
+      - sonarr
     privileged: true
     ports:
       - 8265:8265 # webUI port

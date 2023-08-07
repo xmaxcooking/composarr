@@ -9,6 +9,9 @@ services:
     ports:
       - 8181:8181 
     restart: unless-stopped
+    depends_on:
+      - plex
+      - overseerr
     networks:
     - composarr
 
