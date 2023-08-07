@@ -85,52 +85,7 @@ After ensuring all containers are running, access Plex at `localhost:32400/web`:
   
 **Note**: Disable Plex Pass advanced features if you don't plan on purchasing it.
 
-### 4. Sonarr Configuration
-Connect to Sonarr at `localhost:8989`:
-
-- Navigate to `Settings > Media Management`:
-  - Add root folder: `/data/raw/series/`
-  - Add another root folder: `/data/raw/anime/`
-- Under `Settings > General`, copy the API key for future use.
-
-### 5. Radarr Configuration
-Connect to Radarr at `localhost:7878`:
-
-- Navigate to `Settings > Media Management` and add root folder `/data/raw/movies/`.
-- Under `Settings > General`, copy the API key for future use.
-
-### 6. Prowlarr Configuration
-Access Prowlarr at `localhost:9696`:
-
-- Set a password (keep it safe). Optionally, you can disable authentication for local addresses.
-- Under `Settings > Apps`, add the Sonarr and Radarr services using the previously saved API keys.
-  
-**Note**: Replace `localhost` in the Prowlarr and Radarr server input fields with your local IP.
-
-### 7. Indexer Proxy Setup
-In Prowlarr, navigate to `Settings > Indexers`:
-  
-- Add Flaresolverr as an indexer proxy. Update the localhost part in the URL with your IP and assign a 'flaresolverr' tag.
-
-### 8. Add Public Indexers
-At this stage, integrate a few public indexers into Prowlarr and synchronize them with your applications.
-
-### 9. Overseerr Configuration
-Connect to Overseerr at `localhost:5055`:
-
-- Sign in with your Plex account and link your Plex service.
-- Synchronize libraries for movies, anime, and series.
-- Connect Radarr and Sonarr:
-  - Provide all necessary inputs and select the previously configured root folders.
-
-**Note**: No need to add Sonarr twice for different root folders.
-
-### 10. Tautulli Setup
-Connect to Tautulli at `localhost:8181`:
-
-- Set up a login, authenticate with Plex, and connect the Plex service.
-
-### 11. qBittorrent Configuration
+### 4. qBittorrent Configuration
 Access qBittorrent at `localhost:8090` (Default credentials: `admin/adminadmin`):
 
 - Under `Settings > Downloads`:
@@ -140,7 +95,74 @@ Access qBittorrent at `localhost:8090` (Default credentials: `admin/adminadmin`)
   - Add an external program for completed torrents: `unrar x "%D/*.r*" "%D/"`
 - Under `Settings > Advanced`, set the network interface to `tun0`.
 
+### 5. Sonarr Configuration
+Connect to Sonarr at `localhost:8989`:
+
+- Navigate to `Settings > Media Management`:
+  - Add root folder: `/data/raw/series/`
+  - Add another root folder: `/data/raw/anime/`
+- Under `Settings > General`, copy the API key for future use.
+- Under `Settings > Download Client`, add qBittorent.
+  - Add your IP as Host and Port to `8090`
+
+### 6. Radarr Configuration
+Connect to Radarr at `localhost:7878`:
+
+- Navigate to `Settings > Media Management` and add root folder `/data/raw/movies/`.
+- Under `Settings > General`, copy the API key for future use.
+- Under `Settings > Download Client`, add qBittorent.
+  - Add your IP as Host and Port to `8090`
+
+### 7. Prowlarr Configuration
+Access Prowlarr at `localhost:9696`:
+
+- Set a password (keep it safe). Optionally, you can disable authentication for local addresses.
+- Under `Settings > Apps`, add the Sonarr and Radarr services using the previously saved API keys.
+  
+**Note**: Replace `localhost` in the Prowlarr and Radarr server input fields with your local IP.
+
+### 8. Indexer Proxy Setup
+In Prowlarr, navigate to `Settings > Indexers`:
+  
+- Add Flaresolverr as an indexer proxy. Update the localhost part in the URL with your IP and assign a 'flaresolverr' tag.
+
+### 9. Add Public Indexers
+At this stage, integrate a few public indexers into Prowlarr and synchronize them with your applications.
+
+### 10. Overseerr Configuration
+Connect to Overseerr at `localhost:5055`:
+
+- Sign in with your Plex account and link your Plex service.
+- Synchronize libraries for movies, anime, and series.
+- Connect Radarr and Sonarr:
+  - Provide all necessary inputs and select the previously configured root folders.
+
+**Note**: No need to add Sonarr twice for different root folders.
+
+### 11. Tautulli Setup
+Connect to Tautulli at `localhost:8181`:
+
+- Set up a login, authenticate with Plex, and connect the Plex service.
+
 ### 12. Tdarr Setup
+Connect to Tdarr at `localhost:8265`
+
+#### Configure Node
+
+- select `MyInternalNode` on the main page.
+- Click the plus on Transcode GPU
+- Click the plus on Health Check: CPU 
+- Check `Auto accept successful transcodes`
+
+#### Configure Library
+
+- go to libraries and a new library named raw.
+  - check folder watch and scan on start.
+  - set the source to /media/raw
+  - check the hourly scan or configure to your taste.
+  - go to the transcode tab and set /temp (this is not mapped as a volume in the docker compose)
+  - go to output folder and set /media/media
+  - check output folder, copy to output if met and delete source file. don't record history. 
 
 #### Configure Transcode Options
 
@@ -162,7 +184,7 @@ Access qBittorrent at `localhost:8090` (Default credentials: `admin/adminadmin`)
 
 ### Wrapping Up
 
-With all these configurations, you've now set up a robust media stack. Ensure regular backups of your configurations to prevent any data loss.
+With all these configurations, you've now set up a robust media stack and you can now add 
 
 Should you encounter any issues or need further guidance, please refer to the individual documentation of each service or raise an issue on our [GitHub repository](https://github.com/xmaxcooking/composarr/issues).
 
