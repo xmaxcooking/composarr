@@ -1,54 +1,41 @@
 # Composarr
 
-Composarr offers a consolidated toolset designed to streamline and manage your media stack. With a myriad of docker images, it ensures optimal performance and functionality. This document briefly describes each Docker image used by Composarr.
+Composarr is a comprehensive repository that offers a quickstart solution to set up an 'arr-stack', aiming to streamline and optimize your media management processes. It combines multiple tools to provide seamless management of media content, from selecting and indexing to downloading, transcoding, and finally streaming.
 
-## Docker Images Utilized by Composarr
+## Features:
+- **Media Selection**: Using **Overseerr**, you can easily choose the media content you wish to add to your collection.
+- **Indexer Management**: **Prowlarr** handles and syncs your indexers.
+- **Media Requests**: **Sonarr** and **Radarr** receive requests from Overseerr and relay them to **qBittorrent** for downloading.
+- **Downloading**: **qBittorrent** fetches the requested torrents and relocates them to a designated folder.
+- **Transcoding**: **Tdarr** inspects the download folder, queues media for transcoding, and upon completion, shifts them to Plex media folders for streaming. 
+- **Captchas**: **Flaresolverr** allows you to bypass captchas of public torrent indexers.
+- **Self-Updating**: **Watchtower** automatically updates all your services and keeps your containers up-to-date and secure.
+- **Anonymous**: **Gluetun** provides a secure network layer for downloading. (Warning! Not all services are using this layer by default. Sonarr and Radarr are currently optional)
+- **Self-Configuring**: **Recyclarr** updates
 
-1. **FlareSolverr** ([flaresolverr/flaresolverr](https://github.com/FlareSolverr/FlareSolverr))
-   - A proxy server for bypassing anti-bot protections, assisting in scraping data from websites.
-
-2. **Gluetun** ([qmcgaw/gluetun](https://github.com/qdm12/gluetun))
-   - A robust VPN (Virtual Private Network) in a Docker container, essential for online privacy.
-
-3. **Overseerr** ([linuxserver/overseerr](https://github.com/sct/overseerr))
-   - Provides a frontend to manage requests for movies and TV shows across your other services.
-
-4. **Plex**
-   - A media server application that allows you to stream your movies, music, and TV series.
-
-5. **Prowlarr** ([linuxserver/prowlarr](https://github.com/Prowlarr/Prowlarr))
-   - An indexer management tool which integrates with Radarr, Sonarr, etc., to provide metadata and search capabilities.
-
-6. **qBittorrent** ([linuxserver/qbittorrent](https://github.com/qbittorrent/qBittorrent))
-   - A lightweight torrent client known for its ease of use.
-
-7. **Radarr** ([linuxserver/radarr](https://github.com/Radarr/Radarr))
-   - A movie collection manager for Usenet and BitTorrent users.
-
-8. **Recyclarr** ([recyclarr/recyclarr](https://github.com/recyclarr/recyclarr))
-   - A utility to help integrate Radarr and Sonarr for enhanced media management.
-
-9. **Sonarr** ([linuxserver/sonarr](https://github.com/Sonarr/Sonarr))
-   - Manages TV show series; fetches, sorts, and renames episodes.
-
-10. **Tautulli** ([linuxserver/tautulli](https://github.com/Tautulli/Tautulli))
-    - A monitoring application for Plex Media Server; provides analytics and notifications.
-
-11. **Tdarr** ([ghcr.io/haveagitgat/tdarr](https://github.com/HaveAGitGat/Tdarr))
-    - A self-hosted solution to transcode, organize, and process your media files.
-
-12. **Watchtower** ([containrrr/watchtower](https://github.com/containrrr/watchtower))
-    - Monitors running Docker containers and updates them to the latest versions.
-
-By using Composarr, you harness the power of all these tools in a unified, efficient manner. Ensure to check out their individual documentations for in-depth configurations and details.
-
----
+Harness the capabilities of all these components with Composarr, setting up a powerful media stack with ease!
 
 # Disclaimer
- 
+
 Composarr is purely a tool for media organization and does not host or distribute any copyrighted content. Users are responsible for ensuring the content they manage or view using this toolset complies with local laws and copyright regulations. The creator of Composarr accepts no responsibility or liability for any misuse or violation of laws by users. Always use this software responsibly and in accordance with applicable regulations.
 
 ---
+
+## Links
+
+1. **FlareSolverr** ([flaresolverr/flaresolverr](https://github.com/FlareSolverr/FlareSolverr))
+2. **Gluetun** ([qmcgaw/gluetun](https://github.com/qdm12/gluetun))
+3. **Overseerr** ([linuxserver/overseerr](https://github.com/sct/overseerr))
+4. **Plex**
+5. **Prowlarr** ([linuxserver/prowlarr](https://github.com/Prowlarr/Prowlarr)
+6. **qBittorrent** ([linuxserver/qbittorrent](https://github.com/qbittorrent/qBittorrent))
+7. **Radarr** ([linuxserver/radarr](https://github.com/Radarr/Radarr))
+8. **Recyclarr** ([recyclarr/recyclarr](https://github.com/recyclarr/recyclarr))
+9. **Sonarr** ([linuxserver/sonarr](https://github.com/Sonarr/Sonarr))
+10. **Tautulli** ([linuxserver/tautulli](https://github.com/Tautulli/Tautulli))
+11. **Tdarr** ([ghcr.io/haveagitgat/tdarr](https://github.com/HaveAGitGat/Tdarr))
+12. **Watchtower** ([containrrr/watchtower](https://github.com/containrrr/watchtower))
+
 
 ## Prerequisites
 1. Clone the Repository: 
@@ -191,11 +178,7 @@ Connect to Tdarr at `localhost:8265`
 
 ### Wrapping Up
 
-With all these configurations, you've now set up a robust media stack and you can now add all your indexers to prowlarr and start selecting media on overseer.
-
-> **Note**: Use the flaresolverr tag if necessary
-
-Should you encounter any issues or need further guidance, please refer to the individual documentation of each service or raise an issue on our [GitHub repository](https://github.com/xmaxcooking/composarr/issues).
+With all these configurations, you've now set up a robust media stack. You can now add all your indexers to Prowlarr and start selecting media on Overseerr. Use the flaresolverr tag if necessary. Should you encounter any issues or need further guidance, please refer to the individual documentation of each service or raise an issue on our [GitHub repository](https://github.com/xmaxcooking/composarr/issues).
 
 Happy streaming! 🎬
 
@@ -205,4 +188,4 @@ A special shoutout to [Dr Frankenstein](https://drfrankenstein.co.uk/) for his i
 
 ### License
 
-Composarr is licensed under the MIT License. This means you can freely use, modify, distribute, and private use. We are not liable for any damages or warranties. For the full license details, you can [view the MIT License here](https://opensource.org/licenses/MIT).
+Composarr is licensed under the MIT License. This means you can freely use, modify, distribute, and for private use. We are not liable for any damages or warranties. For the full license details, you can [view the MIT License here](https://opensource.org/licenses/MIT).
