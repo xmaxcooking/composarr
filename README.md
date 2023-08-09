@@ -11,31 +11,28 @@ Composarr is a comprehensive repository that offers a quickstart solution to set
 - **Captchas**: **Flaresolverr** allows you to bypass captchas of public torrent indexers.
 - **Self-Updating**: **Watchtower** automatically updates all your services and keeps your containers up-to-date and secure.
 - **Anonymous**: **Gluetun** provides a secure network layer for downloading. (Warning! Not all services are using this layer by default. Sonarr and Radarr are currently optional)
-- **Self-Configuring**: **Recyclarr** updates
+- **Self-Configuring**: **Recyclarr** automatically syncs the newest media filters into your services to prevent low-quality media from appearing in your requests.
+- **Statistics**: **Tautulli** provides insights into your Plex usage.
 
-Harness the capabilities of all these components with Composarr, setting up a powerful media stack with ease!
+Harness the capabilities of all these features, setting up a powerful media stack with ease!
 
 # Disclaimer
 
 Composarr is purely a tool for media organization and does not host or distribute any copyrighted content. Users are responsible for ensuring the content they manage or view using this toolset complies with local laws and copyright regulations. The creator of Composarr accepts no responsibility or liability for any misuse or violation of laws by users. Always use this software responsibly and in accordance with applicable regulations.
-
----
 
 ## Links
 
 1. **FlareSolverr** ([flaresolverr/flaresolverr](https://github.com/FlareSolverr/FlareSolverr))
 2. **Gluetun** ([qmcgaw/gluetun](https://github.com/qdm12/gluetun))
 3. **Overseerr** ([linuxserver/overseerr](https://github.com/sct/overseerr))
-4. **Plex**
-5. **Prowlarr** ([linuxserver/prowlarr](https://github.com/Prowlarr/Prowlarr)
-6. **qBittorrent** ([linuxserver/qbittorrent](https://github.com/qbittorrent/qBittorrent))
-7. **Radarr** ([linuxserver/radarr](https://github.com/Radarr/Radarr))
-8. **Recyclarr** ([recyclarr/recyclarr](https://github.com/recyclarr/recyclarr))
-9. **Sonarr** ([linuxserver/sonarr](https://github.com/Sonarr/Sonarr))
-10. **Tautulli** ([linuxserver/tautulli](https://github.com/Tautulli/Tautulli))
-11. **Tdarr** ([ghcr.io/haveagitgat/tdarr](https://github.com/HaveAGitGat/Tdarr))
-12. **Watchtower** ([containrrr/watchtower](https://github.com/containrrr/watchtower))
-
+4. **Prowlarr** ([linuxserver/prowlarr](https://github.com/Prowlarr/Prowlarr)
+5. **qBittorrent** ([linuxserver/qbittorrent](https://github.com/qbittorrent/qBittorrent))
+6. **Radarr** ([linuxserver/radarr](https://github.com/Radarr/Radarr))
+7. **Recyclarr** ([recyclarr/recyclarr](https://github.com/recyclarr/recyclarr))
+8. **Sonarr** ([linuxserver/sonarr](https://github.com/Sonarr/Sonarr))
+9.  **Tautulli** ([linuxserver/tautulli](https://github.com/Tautulli/Tautulli))
+10. **Tdarr** ([ghcr.io/haveagitgat/tdarr](https://github.com/HaveAGitGat/Tdarr))
+11. **Watchtower** ([containrrr/watchtower](https://github.com/containrrr/watchtower))
 
 ## Prerequisites
 1. Clone the Repository: 
